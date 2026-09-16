@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b63ce">
+<meta name="description" content="Explora ofertas de viajes por país y destino: vuelos, hoteles, trenes, experiencias y promociones de Trip.com.">
+<meta name="robots" content="index,follow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta property="og:title" content="TRIP.COM · Travel Offers">
+<meta property="og:description" content="Explora ofertas de viajes por país y destino.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<title>TRIP.COM · Travel Offers</title>
+
+<!--
+  LUMEN / TRAVEL OFFERS
+  Página promocional independiente.
+  No es el sitio oficial de Trip.com.
+  Los enlaces de afiliado se mantienen exactamente como fueron proporcionados.
+  No se incluyen API keys, contraseñas, tokens ni datos personales.
+  Las imágenes reales autorizadas pueden incorporarse posteriormente
+  sustituyendo image por la URL autorizada correspondiente.
+-->
+<style>
+:root{
+  --blue:#0b63ce;
+  --blue-dark:#084b9d;
+  --green:#159447;
+  --green-dark:#10763a;
+  --ink:#102033;
+  --muted:#667487;
+  --line:#dfe6ee;
+  --bg:#f6f8fb;
+  --white:#fff;
+  --soft:#edf5ff;
+  --radius:18px;
+  --shadow:0 10px 30px rgba(16,32,51,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.55;
+}
+a{text-decoration:none;color:inherit}
+button,input,select{font:inherit}
+button,select{cursor:pointer}
+:focus-visible{outline:3px solid #ffb000;outline-offset:3px}
+
+.container{width:min(1180px,calc(100% - 32px));margin:auto}
+.header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.96);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(12px);
+}
+.header-inner{
+  min-height:70px;display:flex;align-items:center;
+  justify-content:space-between;gap:18px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900}
+.brand-mark{
+  width:38px;height:38px;border-radius:10px;
+  background:var(--blue);color:#fff;display:grid;place-items:center;
+  font-size:14px;letter-spacing:-.5px;
+}
+.brand-text strong{display:block;font-size:17px;letter-spacing:.3px}
+.brand-text span{display:block;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1.3px}
+.nav{display:flex;align-items:center;gap:20px;font-size:14px;font-weight:700}
+.nav a:hover{color:var(--blue)}
+.lang{
+  border:1px solid var(--line);border-radius:10px;
+  padding:8px 10px;background:#fff;color:var(--ink);
+}
+.hero{
+  background:linear-gradient(180deg,#edf6ff 0%,#fff 100%);
+  padding:74px 0 58px;
+  border-bottom:1px solid var(--line);
+}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:center}
+.eyebrow{
+  display:inline-flex;padding:7px 11px;border-radius:999px;
+  background:#dcecff;color:var(--blue-dark);
+  font-size:12px;font-weight:900;letter-spacing:1px;
+}
+h1{font-size:clamp(38px,6vw,68px);line-height:1.02;letter-spacing:-2.8px;margin:18px 0}
+.hero p{font-size:18px;color:var(--muted);max-width:690px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:46px;padding:0 19px;border-radius:11px;
+  border:1px solid transparent;font-weight:850;
+  transition:.18s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--green-dark)}
+.btn-light{background:#fff;border-color:var(--line)}
+.hero-note{font-size:13px!important;margin-top:17px;color:#526273!important}
+.hero-card{
+  background:#fff;border:1px solid var(--line);border-radius:24px;
+  padding:27px;box-shadow:var(--shadow)
+}
+.hero-card .big{font-size:48px;font-weight:950;color:var(--blue);line-height:1}
+.hero-card h2{margin:12px 0 5px;font-size:21px}
+.hero-card p{font-size:14px;margin:0}
+
+section{padding:62px 0}
+.section-head{max-width:760px;margin-bottom:27px}
+.section-head h2{font-size:clamp(28px,4vw,42px);letter-spacing:-1.3px;line-height:1.1;margin:0 0 10px}
+.section-head p{color:var(--muted);margin:0}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.step{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;box-shadow:0 5px 20px rgba(16,32,51,.04)
+}
+.step-number{
+  width:34px;height:34px;border-radius:50%;background:var(--blue);
+  color:#fff;display:grid;place-items:center;font-weight:900;margin-bottom:13px
+}
+.step h3{margin:0 0 5px;font-size:17px}
+.step p{margin:0;color:var(--muted);font-size:14px}
+
+.explore{background:#fff}
+.quick-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:13px
+}
+.quick{
+  border:1px solid var(--line);border-radius:16px;padding:18px;
+  background:#fff;transition:.18s ease;display:flex;flex-direction:column;
+  min-height:175px
+}
+.quick:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:#bdd6f2}
+.quick-market{font-size:11px;font-weight:900;color:var(--blue);letter-spacing:.7px;text-transform:uppercase}
+.quick h3{font-size:18px;margin:8px 0 5px}
+.quick p{font-size:13px;color:var(--muted);margin:0 0 15px;flex:1}
+.quick .btn{width:100%;font-size:12px;min-height:40px}
+
+.filters{
+  background:#fff;border:1px solid var(--line);border-radius:20px;
+  padding:20px;box-shadow:var(--shadow);margin-bottom:28px
+}
+.filter-grid{
+  display:grid;grid-template-columns:2fr repeat(4,1fr);gap:11px
+}
+.field label{display:block;font-size:11px;font-weight:900;text-transform:uppercase;
+  letter-spacing:.6px;color:var(--muted);margin:0 0 6px}
+.field input,.field select{
+  width:100%;height:44px;border:1px solid #ccd6e2;border-radius:10px;
+  background:#fff;color:var(--ink);padding:0 11px
+}
+.results-bar{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:15px;margin:15px 0;font-size:14px;color:var(--muted)
+}
+.offers-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:17px
+}
+.offer{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;min-width:0;
+  box-shadow:0 5px 20px rgba(16,32,51,.045)
+}
+.offer-visual{
+  height:145px;background:
+  radial-gradient(circle at 80% 20%,rgba(255,255,255,.75),transparent 30%),
+  linear-gradient(135deg,#e8f3ff,#d7e9fb 55%,#eef8f2);
+  display:flex;align-items:flex-end;padding:16px;position:relative
+}
+.offer-visual strong{font-size:29px;color:#0b4e8e;letter-spacing:-1px}
+.offer-body{padding:19px;display:flex;flex-direction:column;flex:1}
+.offer-meta{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:9px}
+.tag{
+  font-size:10px;font-weight:900;text-transform:uppercase;
+  letter-spacing:.5px;padding:5px 7px;border-radius:999px;
+  background:#eef3f8;color:#536477
+}
+.tag.blue{background:#e3f0ff;color:#075bbd}
+.tag.green{background:#e3f6eb;color:#11783c}
+.offer h3{margin:0 0 7px;font-size:20px;line-height:1.18}
+.offer p{margin:0;color:var(--muted);font-size:13px;flex:1}
+.offer-actions{margin-top:16px}
+.offer-actions .btn{width:100%;font-size:13px}
+.verify{font-size:11px;color:#7a5a00;background:#fff7d9;
+  border-radius:8px;padding:7px 9px;margin-top:9px}
+.platform-note{text-align:center;font-size:11px;color:var(--muted);margin-top:8px}
+
+.category-strip{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.category-chip{
+  border:1px solid var(--line);background:#fff;border-radius:999px;
+  padding:9px 13px;font-size:13px;font-weight:800
+}
+.category-chip:hover{border-color:var(--blue);color:var(--blue)}
+
+.market-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.market-card{
+  background:#fff;border:1px solid var(--line);border-radius:15px;
+  padding:18px;cursor:pointer
+}
+.market-card:hover{box-shadow:var(--shadow)}
+.market-code{font-weight:950;color:var(--blue);font-size:13px}
+.market-name{font-weight:850;margin-top:4px}
+.market-count{font-size:12px;color:var(--muted);margin-top:4px}
+
+.trust{
+  background:#102033;color:#fff
+}
+.trust .section-head p{color:#bdc8d5}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.trust-card{
+  border:1px solid rgba(255,255,255,.13);border-radius:17px;
+  padding:22px;background:rgba(255,255,255,.045)
+}
+.trust-card h3{margin:0 0 7px;font-size:17px}
+.trust-card p{margin:0;color:#c4cfdb;font-size:14px}
+
+.cta{
+  background:#fff;padding:65px 0
+}
+.cta-box{
+  background:#edf6ff;border:1px solid #cfe2f7;border-radius:25px;
+  padding:40px;display:flex;justify-content:space-between;
+  align-items:center;gap:25px
+}
+.cta-box h2{font-size:34px;letter-spacing:-1px;margin:0 0 7px}
+.cta-box p{color:var(--muted);margin:0}
+
+footer{
+  background:#fff;border-top:1px solid var(--line);padding:30px 0
+}
+.footer-top{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer-brand{font-weight:950}
+.footer-links{display:flex;gap:17px;flex-wrap:wrap;font-size:13px}
+.footer-links button{
+  border:0;background:none;padding:0;color:var(--muted);cursor:pointer
+}
+.footer-note{font-size:12px;color:var(--muted);max-width:850px;margin-top:17px}
+.copyright{font-size:12px;color:#7a8795;margin-top:17px}
+
+.empty{
+  grid-column:1/-1;text-align:center;padding:50px 20px;
+  background:#fff;border:1px dashed #ccd6e2;border-radius:18px;
+  color:var(--muted)
+}
+
+.modal{
+  position:fixed;inset:0;background:rgba(5,18,32,.58);z-index:100;
+  display:none;align-items:center;justify-content:center;padding:20px
+}
+.modal.open{display:flex}
+.modal-box{
+  width:min(680px,100%);max-height:85vh;overflow:auto;background:#fff;
+  border-radius:20px;padding:28px;box-shadow:0 25px 70px rgba(0,0,0,.25)
+}
+.modal-head{display:flex;justify-content:space-between;gap:15px;align-items:center}
+.modal-head h2{margin:0}
+.close{
+  border:0;background:#eef2f6;border-radius:9px;width:38px;height:38px;
+  font-size:21px
+}
+.modal p{color:var(--muted);font-size:14px}
+
+@media(max-width:1000px){
+  .hero-grid{grid-template-columns:1fr}
+  .quick-grid{grid-template-columns:repeat(3,1fr)}
+  .offers-grid{grid-template-columns:repeat(2,1fr)}
+  .market-grid{grid-template-columns:repeat(3,1fr)}
+  .filter-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .container{width:min(100% - 22px,1180px)}
+  .nav{display:none}
+  .hero{padding:50px 0 40px}
+  h1{letter-spacing:-1.8px}
+  .hero p{font-size:16px}
+  .steps,.trust-grid{grid-template-columns:1fr}
+  .quick-grid{grid-template-columns:1fr 1fr}
+  .offers-grid{grid-template-columns:1fr}
+  .market-grid{grid-template-columns:1fr 1fr}
+  .filter-grid{grid-template-columns:1fr}
+  .cta-box{padding:28px;flex-direction:column;align-items:flex-start}
+}
+@media(max-width:430px){
+  .quick-grid,.market-grid{grid-template-columns:1fr}
+  section{padding:48px 0}
+  .brand-text span{display:none}
+}
+</style>
+
+<meta http-equiv="Content-Security-Policy"
+content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="#" aria-label="TRIP.COM Travel Offers">
+      <span class="brand-mark">T</span>
+      <span class="brand-text">
+        <strong>TRIP.COM</strong>
+        <span>Travel Offers</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#offers" data-i18n="navOffers">Ofertas</a>
+      <a href="#trust" data-i18n="navTrust">Confianza</a>
+      <a href="#markets" data-i18n="navMarkets">Mercados</a>
+    </nav>
+
+    <label>
+      <span class="sr-only" data-i18n="languageLabel">Idioma</span>
+      <select id="language" class="lang" aria-label="Language">
+        <option value="es">Español</option>
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+        <option value="it">Italiano</option>
+        <option value="pt">Português</option>
+        <option value="zh">简体中文</option>
+        <option value="zhTW">繁體中文</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="vi">Tiếng Việt</option>
+        <option value="id">Bahasa Indonesia</option>
+        <option value="th">ไทย</option>
+        <option value="ru">Русский</option>
+      </select>
+    </label>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow" data-i18n="heroEyebrow">TRIP.COM · TRAVEL OFFERS</span>
+      <h1 data-i18n="heroTitle">Descubre ofertas de viajes por país y destino</h1>
+      <p data-i18n="heroText">
+        Elige una promoción, revisa el precio y las condiciones directamente en Trip.com.
+      </p>
+      <div class="actions">
+        <a class="btn btn-green" href="#offers" data-i18n="exploreButton">Explorar ofertas</a>
+      </div>
+      <p class="hero-note" data-i18n="heroNote">Sin recargos añadidos por esta página.</p>
+    </div>
+
+    <aside class="hero-card">
+      <div class="big">88</div>
+      <h2 data-i18n="heroCardTitle">ofertas y promociones</h2>
+      <p data-i18n="heroCardText">
+        Selecciona país, destino, categoría o busca directamente la promoción que te interesa.
+      </p>
+    </aside>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <h2 data-i18n="howTitle">Cómo comprar</h2>
+      <p data-i18n="howText">Un recorrido sencillo para llegar directamente a la oferta.</p>
+    </div>
+
+    <div class="steps">
+      <article class="step">
+        <div class="step-number">1</div>
+        <h3 data-i18n="step1Title">Elige destino</h3>
+        <p data-i18n="step1Text">Busca el país, destino o promoción que te interesa.</p>
+      </article>
+      <article class="step">
+        <div class="step-number">2</div>
+        <h3 data-i18n="step2Title">Pulsa RESERVAR AQUÍ</h3>
+        <p data-i18n="step2Text">Entra directamente en la oferta correspondiente de Trip.com.</p>
+      </article>
+      <article class="step">
+        <div class="step-number">3</div>
+        <h3 data-i18n="step3Title">Revisa y compra</h3>
+        <p data-i18n="step3Text">Comprueba precio, disponibilidad y condiciones antes de comprar.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="explore" id="explore">
+  <div class="container">
+    <div class="section-head">
+      <h2 data-i18n="exploreTitle">Explora ofertas por país y destino</h2>
+      <p data-i18n="exploreText">
+        Elige un país o destino y entra directamente en una promoción concreta de Trip.com.
+        Allí podrás consultar el precio, la vigencia y las condiciones aplicables.
+      </p>
+    </div>
+
+    <div id="quickGrid" class="quick-grid"></div>
+  </div>
+</section>
+
+<section id="offers">
+  <div class="container">
+    <div class="section-head">
+      <h2 data-i18n="offersTitle">Todas las ofertas</h2>
+      <p data-i18n="offersText">
+        Busca y filtra las promociones por mercado, destino, categoría y tipo de viaje.
+      </p>
+    </div>
+
+    <div class="filters">
+      <div class="filter-grid">
+        <div class="field">
+          <label for="search" data-i18n="searchLabel">Buscar</label>
+          <input id="search" type="search" data-i18n-placeholder="searchPlaceholder"
+                 placeholder="China, Japón, Europa, vuelos..." autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label for="market" data-i18n="marketLabel">Mercado</label>
+          <select id="market"></select>
+        </div>
+
+        <div class="field">
+          <label for="destination" data-i18n="destinationLabel">Destino</label>
+          <select id="destination"></select>
+        </div>
+
+        <div class="field">
+          <label for="category" data-i18n="categoryLabel">Categoría</label>
+          <select id="category"></select>
+        </div>
+
+        <div class="field">
+          <label for="type" data-i18n="typeLabel">Tipo</label>
+          <select id="type"></select>
+        </div>
+      </div>
+
+      <div class="category-strip" id="categoryStrip"></div>
+    </div>
+
+    <div class="results-bar">
+      <span id="resultCount" aria-live="polite"></span>
+      <button class="btn btn-light" id="clearFilters" type="button" data-i18n="clearFilters">
+        Limpiar filtros
+      </button>
+    </div>
+
+    <div id="offersGrid" class="offers-grid"></div>
+  </div>
+</section>
+
+<section id="markets">
+  <div class="container">
+    <div class="section-head">
+      <h2 data-i18n="marketsTitle">Ofertas por mercado</h2>
+      <p data-i18n="marketsText">
+        Explora las promociones según el mercado desde el que se presenta cada oferta.
+      </p>
+    </div>
+    <div id="marketGrid" class="market-grid"></div>
+  </div>
+</section>
+
+<section id="trust" class="trust">
+  <div class="container">
+    <div class="section-head">
+      <h2 data-i18n="trustTitle">Información clara antes de comprar</h2>
+      <p data-i18n="trustText">
+        Esta página facilita el acceso a promociones. Los datos finales de la reserva se consultan en Trip.com.
+      </p>
+    </div>
+
+    <div class="trust-grid">
+      <article class="trust-card">
+        <h3 data-i18n="trust1Title">Precio y condiciones</h3>
+        <p data-i18n="trust1Text">Consulta el precio, disponibilidad, vigencia y condiciones directamente en Trip.com.</p>
+      </article>
+      <article class="trust-card">
+        <h3 data-i18n="trust2Title">Enlace directo</h3>
+        <p data-i18n="trust2Text">Cada botón abre la promoción correspondiente en una nueva pestaña.</p>
+      </article>
+      <article class="trust-card">
+        <h3 data-i18n="trust3Title">Sin recargo añadido</h3>
+        <p data-i18n="trust3Text">Esta página no añade un recargo al precio que se muestra en la plataforma.</p>
+      </article>
+    </div>
+
+    <div style="margin-top:25px;color:#c4cfdb;font-size:13px">
+      <strong data-i18n="affiliateDisclosure">
+        Esta página utiliza enlaces afiliados de Trip.com. Podemos recibir una comisión por determinadas reservas realizadas mediante nuestros enlaces, sin coste adicional para el usuario.
+      </strong>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <div class="cta-box">
+      <div>
+        <h2 data-i18n="ctaTitle">¿Ya sabes dónde quieres viajar?</h2>
+        <p data-i18n="ctaText">Explora las ofertas y entra directamente en la promoción que te interese.</p>
+      </div>
+      <a class="btn btn-green" href="#explore" data-i18n="ctaButton">Ver ofertas</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">TRIP.COM · Travel Offers</div>
+      <div class="footer-links">
+        <button type="button" data-modal="privacy" data-i18n="privacy">Privacidad</button>
+        <button type="button" data-modal="terms" data-i18n="terms">Términos</button>
+        <button type="button" data-modal="affiliate" data-i18n="affiliateShort">Información de afiliación</button>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      <span data-i18n="brandDisclaimer">
+        Trip.com es una marca de Trip.com Group. Esta página no es el sitio oficial de Trip.com.
+      </span>
+      <br><br>
+      <span data-i18n="officialToolsNote">
+        Las promociones y enlaces proceden de herramientas/enlaces de afiliado de Trip.com proporcionados para este propósito. La vigencia de determinadas campañas debe comprobarse en la plataforma.
+      </span>
+    </div>
+
+    <div class="copyright">
+      TRIP.COM · Travel Offers · © 2026 ·
+      <span data-i18n="footerTravel">Travel offers and promotional links</span>
+    </div>
+  </div>
+</footer>
+
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h2 id="modalTitle"></h2>
+      <button class="close" id="closeModal" type="button" aria-label="Close">×</button>
+    </div>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script>
+"use strict";
+
+/* =========================
+   DATOS DE LAS 88 OFERTAS
+   ========================= */
+
+const U = (url) => url;
+
+const offers = [
+{ id:1,market:"ID",destination:"Indonesia",category:"Special offers",type:"Other",title:"Muslim-Friendly Travel",description:"Promoción de viajes Muslim-Friendly. Consulta destinos, precios y condiciones en Trip.com.",url:U("https://id.trip.com/sale/w/22451/muslimfriendly.html?locale=id-id&curr=idr&transparentBar=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833060") },
+{ id:2,market:"ID",destination:"Singapore",category:"Flights",type:"Flights",title:"Singapore Airlines",description:"Ofertas y destinos internacionales con Singapore Airlines.",url:U("https://id.trip.com/sale/w/xdfetrbm7ga0wcbs/sq.html?locale=id-ID&transparentBar=1&wkp=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833074") },
+{ id:3,market:"ID",destination:"Indonesia",category:"Flights",type:"Flights",title:"AirAsia",description:"Promoción de vuelos AirAsia. Consulta rutas, precios y condiciones.",url:U("https://id.trip.com/sale/w/2wxffi6yr5blkd2w/flywithairasia.html?locale=id-ID&transparentBar=1&wkp=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833081") },
+{ id:4,market:"ID",destination:"Indonesia",category:"Flights",type:"Flights",title:"Flight Promotions",description:"Promociones de vuelos. Consulta precios y condiciones en Trip.com.",url:U("https://id.trip.com/sale/w/17642/tiketpesawat.html?locale=id-ID&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833102") },
+{ id:5,market:"ID",destination:"Indonesia",category:"Mixed",type:"Mixed",title:"Bank Mega Syariah",description:"Descuentos y promociones para vuelos y hoteles.",url:U("https://id.trip.com/sale/w/35625/mega-syariah.html?locale=id-id&curr=idr&transparentBar=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833130") },
+{ id:6,market:"ID",destination:"International",category:"Flights",type:"Flights",title:"Business Class",description:"Opciones de viaje Business Class y viajes premium.",url:U("https://id.trip.com/sale/w/33070/business.html?locale=id-ID&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833172") },
+{ id:7,market:"ID",destination:"Switzerland",category:"Trains",type:"Trains",title:"Swiss Travel Pass",description:"Suiza — Swiss Travel Pass para viajar por el país.",url:U("https://id.trip.com/sale/w/36318/swisstravelpass-zh-hk.html?locale=en-ID&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833396") },
+
+{ id:8,market:"PH",destination:"Philippines",category:"Mixed",type:"Mixed",title:"Holiday Deals 2025",description:"Ofertas de vacaciones. Consulta la vigencia y condiciones en Trip.com.",url:U("https://ph.trip.com/sale/w/27435/holidaydeals2025.html?locale=en-PH&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833200"),verify:true },
+{ id:9,market:"PH",destination:"China",category:"Experiences",type:"Experiences",title:"Classic Itineraries in China",description:"China — itinerarios clásicos para descubrir diferentes destinos.",url:U("https://ph.trip.com/sale/w/14709/adspromy.html?locale=en-PH&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833228") },
+{ id:10,market:"PH",destination:"International",category:"Mixed",type:"Mixed",title:"Everyday Escape",description:"Ofertas de hoteles, vuelos y atracciones.",url:U("https://ph.trip.com/sale/w/28065/everydayescape.html?locale=en-PH&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833242") },
+{ id:11,market:"PH",destination:"China",category:"Experiences",type:"Experiences",title:"Trip to China",description:"China — promoción de viajes a China.",url:U("https://ph.trip.com/sale/w/32622/triptochina.html?locale=en-PH&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833270") },
+{ id:12,market:"PH",destination:"Philippines",category:"Mixed",type:"Mixed",title:"September Mid-Month Payday",description:"Promoción de mitad de mes. Consulta la vigencia y condiciones.",url:U("https://ph.trip.com/sale/w/y2pranj3yvk6l3tv/sepmidmonthpayday.html?locale=en-PH&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833284"),verify:true },
+{ id:13,market:"PH",destination:"Europe",category:"Trains",type:"Trains",title:"Eurail / Interrail Pass",description:"Europa — pases Eurail e Interrail para viajar en tren.",url:U("https://ph.trip.com/sale/w/40679/eurailpass.html?locale=en-PH&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833298") },
+{ id:14,market:"PH",destination:"International",category:"Mixed",type:"Mixed",title:"Go Beyond",description:"Viajes internacionales y promociones para descubrir nuevos destinos.",url:U("https://ph.trip.com/sale/w/35618/gobeyond.html?locale=en-ph&curr=php&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833319") },
+{ id:15,market:"PH",destination:"International",category:"Flights",type:"Flights",title:"Cathay Pacific",description:"Ofertas de vuelos con Cathay Pacific.",url:U("https://ph.trip.com/sale/w/0fzazju2hcxhirom/fly-with-cathay-pacific-ph-202609-aigen.html?locale=en-PH&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833361"),verify:true },
+{ id:16,market:"PH",destination:"United Kingdom",category:"Trains",type:"Trains",title:"UK Trains",description:"Reino Unido — billetes y viajes en tren.",url:U("https://uk.trip.com/trains/uk?Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833382") },
+{ id:17,market:"PH",destination:"Philippines",category:"Mixed",type:"Mixed",title:"Megaworld",description:"Promociones de viajes asociadas a Megaworld.",url:U("https://ph.trip.com/sale/w/jnvlgax9kog5nzub/megaworld202609.html?locale=en-PH&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833417"),verify:true },
+{ id:18,market:"PH",destination:"Philippines",category:"Flights",type:"Flights",title:"Aboitiz Airports",description:"Promociones y opciones de viaje relacionadas con aeropuertos.",url:U("https://ph.trip.com/sale/w/41239/aboitizairports.html?locale=en-PH&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833480") },
+{ id:19,market:"PH",destination:"Philippines",category:"Mixed",type:"Mixed",title:"HII",description:"Promoción de viajes. Consulta la oferta y condiciones en Trip.com.",url:U("https://ph.trip.com/sale/w/5qz2y9nkhkovzgvp/hii202609.html?locale=en-PH&transparentBar=1&wkp=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833487"),verify:true },
+{ id:20,market:"PH",destination:"China",category:"Flights",type:"Flights",title:"Air China",description:"Ofertas de vuelos con Air China.",url:U("https://ph.trip.com/sale/w/spbpvxc5mhdl1rzm/air-china-ph-202609-c2-aigen.html?locale=en-PH&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833501"),verify:true },
+{ id:21,market:"PH",destination:"Philippines",category:"Hotels",type:"Hotels",title:"Robinsons Hotels",description:"Ofertas de hoteles Robinsons Hotels.",url:U("https://ph.trip.com/sale/w/jkdfxtkxmbgbak3x/robinsons202609.html?locale=en-PH&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833529"),verify:true },
+{ id:22,market:"PH",destination:"International",category:"Mixed",type:"Mixed",title:"2026 Trip Holiday Guide",description:"Guía de vacaciones con vuelos, hoteles y destinos.",url:U("https://ph.trip.com/sale/w/31306/vlcheatsheet.html?locale=en-ph&curr=php&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833543") },
+{ id:23,market:"PH",destination:"Vietnam",category:"Experiences",type:"Experiences",title:"Hello Vietnam",description:"Vietnam — descubre destinos y experiencias de viaje.",url:U("https://ph.trip.com/sale/w/36745/hellovn.html?locale=en-PH&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833557") },
+
+{ id:24,market:"HK",destination:"Hong Kong",category:"Mixed",type:"Mixed",title:"Family Travel Deals",description:"Ofertas para viajes familiares.",url:U("https://hk.trip.com/sale/w/27386/familytraveldeals.html?locale=zh-HK&transparentBar=1&wkp=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833641") },
+{ id:25,market:"HK",destination:"Paris",category:"Experiences",type:"Experiences",title:"Disneyland Paris",description:"París — Disneyland Paris y experiencias.",url:U("https://hk.trip.com/sale/w/40035/disneylandparis.html?locale=zh-HK&transparentBar=1&wkp=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833655") },
+{ id:26,market:"HK",destination:"Europe",category:"Trains",type:"Trains",title:"Eurail / Interrail Pass",description:"Europa — pases Eurail e Interrail.",url:U("https://hk.trip.com/sale/w/40679/eurailpass.html?locale=zh-HK&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833683") },
+{ id:27,market:"HK",destination:"Hong Kong & Macao",category:"Mixed",type:"Mixed",title:"HKMO Welcome",description:"Promoción de bienvenida para Hong Kong y Macao.",url:U("https://hk.trip.com/sale/w/9297/hkmo-welcome.html?locale=zh-HK&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833711") },
+{ id:28,market:"HK",destination:"China",category:"Experiences",type:"Experiences",title:"China Travel",description:"China — atracciones y tours.",url:U("https://hk.trip.com/sale/w/38726/chinatravelhk.html?locale=zh-HK&transparentBar=1&wkp=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833900") },
+{ id:29,market:"HK",destination:"Europe",category:"Experiences",type:"Experiences",title:"Discover in Europe",description:"Europa — descubre destinos y experiencias.",url:U("https://hk.trip.com/sale/w/41134/discoverineurope.html?locale=zh-HK&transparentBar=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833935") },
+{ id:30,market:"HK",destination:"United Kingdom",category:"Trains",type:"Trains",title:"UK Trains",description:"Reino Unido — viajes en tren.",url:U("https://uk.trip.com/trains/uk?Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833970") },
+{ id:31,market:"HK",destination:"Switzerland",category:"Trains",type:"Trains",title:"Swiss Travel Pass",description:"Suiza — Swiss Travel Pass.",url:U("https://hk.trip.com/sale/w/36318/swisstravelpass-zh-hk.html?locale=zh-HK&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19833991") },
+{ id:32,market:"HK",destination:"Hong Kong",category:"Mixed",type:"Mixed",title:"Happy Friday",description:"Ofertas de viajes Happy Friday.",url:U("https://hk.trip.com/sale/w/15871/happyfriday.html?locale=zh-HK&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834047") },
+{ id:33,market:"HK",destination:"Hong Kong & Macao",category:"Food & Dining",type:"Other",title:"F&B Offers",description:"Hong Kong y Macao — restaurantes y ofertas gastronómicas.",url:U("https://hk.trip.com/sale/w/3018/fnb.html?locale=zh-HK&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834061") },
+{ id:34,market:"HK",destination:"International",category:"Mixed",type:"Mixed",title:"Long Haul Trip",description:"Viajes de larga distancia a Europa, Australia, Reino Unido, EE. UU., Canadá y más.",url:U("https://hk.trip.com/sale/w/12343/longhaultrip.html?Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834103") },
+{ id:35,market:"HK",destination:"International",category:"Flights",type:"Flights",title:"Premium Business / First Class",description:"Opciones de vuelos Business y First Class.",url:U("https://hk.trip.com/sale/w/42463/hkpremium.html?locale=zh-hk&curr=hkd&transparentBar=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834138") },
+{ id:36,market:"HK",destination:"International",category:"Experiences",type:"Experiences",title:"VibeTravelling",description:"Viajes temáticos y experiencias.",url:U("https://hk.trip.com/sale/w/kquff9fxm8rtuj7j/vibetravelling.html?locale=zh-HK&transparentBar=1&wkp=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834222") },
+
+{ id:37,market:"SG",destination:"China",category:"Experiences",type:"Experiences",title:"Go China",description:"China — descubre destinos y experiencias.",url:U("https://sg.trip.com/sale/w/19280/gochina.html?locale=en-SG&transparentBar=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834250") },
+{ id:38,market:"SG",destination:"International",category:"Mixed",type:"Mixed",title:"Family Summer",description:"Viajes familiares de verano.",url:U("https://sg.trip.com/sale/w/xnz6pcn7s6xl9hsl/familysummer.html?locale=en-SG&transparentBar=1&wkp=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834264") },
+{ id:39,market:"SG",destination:"Europe",category:"Trains",type:"Trains",title:"Eurail / Interrail Pass",description:"Europa — pases Eurail e Interrail.",url:U("https://sg.trip.com/sale/w/40679/eurailpass.html?locale=en-SG&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834285") },
+{ id:40,market:"SG",destination:"Europe",category:"Experiences",type:"Experiences",title:"Discover in Europe",description:"Europa — descubre destinos y experiencias.",url:U("https://sg.trip.com/sale/w/41134/discoverineurope.html?locale=en-SG&transparentBar=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834313") },
+{ id:41,market:"SG",destination:"United Kingdom",category:"Trains",type:"Trains",title:"UK Trains",description:"Reino Unido — viajes en tren.",url:U("https://uk.trip.com/trains/uk?Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834327") },
+{ id:42,market:"SG",destination:"Switzerland",category:"Trains",type:"Trains",title:"Swiss Travel Pass",description:"Suiza — Swiss Travel Pass.",url:U("https://sg.trip.com/sale/w/36318/swisstravelpass-zh-hk.html?locale=en-SG&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834341") },
+
+{ id:43,market:"GB",destination:"United Kingdom",category:"Experiences",type:"Experiences",title:"Have Fun Pass",description:"Experiencias y atracciones en Reino Unido.",url:U("https://uk.trip.com/sale/w/38362/havefunpass.html?locale=en-GB&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834390") },
+{ id:44,market:"GB",destination:"United Kingdom",category:"Trains",type:"Trains",title:"UK Trains",description:"Reino Unido — billetes y viajes en tren.",url:U("https://uk.trip.com/trains/uk?Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834425") },
+{ id:45,market:"GB",destination:"Paris",category:"Experiences",type:"Experiences",title:"Disneyland Paris",description:"París — Disneyland Paris.",url:U("https://uk.trip.com/sale/w/40035/disneylandparis.html?locale=en-GB&transparentBar=1&wkp=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834488") },
+{ id:46,market:"GB",destination:"Europe",category:"Experiences",type:"Experiences",title:"Discover in Europe",description:"Europa — descubre destinos y experiencias.",url:U("https://uk.trip.com/sale/w/41134/discoverineurope.html?locale=en-GB&transparentBar=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834495") },
+{ id:47,market:"GB",destination:"Europe",category:"Trains",type:"Trains",title:"Eurail / Interrail Pass",description:"Europa — pases Eurail e Interrail.",url:U("https://uk.trip.com/sale/w/40679/eurailpass.html?locale=en-GB&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834502") },
+
+{ id:48,market:"US",destination:"International",category:"Special offers",type:"Other",title:"Friend Referral",description:"Programa de referidos. Consulta los detalles directamente en Trip.com.",url:U("https://us.trip.com/sale/w/4283/friend-referral.html?locale=en-us&curr=usd&transparentBar=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834628") },
+{ id:49,market:"US",destination:"Switzerland",category:"Trains",type:"Trains",title:"Swiss Travel Pass",description:"Suiza — Swiss Travel Pass.",url:U("https://us.trip.com/sale/w/36318/swisstravelpass-zh-hk.html?locale=en-US&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834642") },
+{ id:50,market:"US",destination:"United Kingdom",category:"Trains",type:"Trains",title:"UK Trains",description:"Reino Unido — viajes en tren.",url:U("https://uk.trip.com/trains/uk?Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834670") },
+{ id:51,market:"US",destination:"Europe",category:"Experiences",type:"Experiences",title:"Discover in Europe",description:"Europa — descubre destinos y experiencias.",url:U("https://us.trip.com/sale/w/41134/discoverineurope.html?locale=en-US&transparentBar=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834677") },
+{ id:52,market:"US",destination:"Europe",category:"Trains",type:"Trains",title:"Eurail / Interrail Pass",description:"Europa — pases Eurail e Interrail.",url:U("https://us.trip.com/sale/w/40679/eurailpass.html?locale=en-US&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834684") },
+{ id:53,market:"US",destination:"China",category:"Experiences",type:"Experiences",title:"Trip to China",description:"China — promoción de viajes a China.",url:U("https://us.trip.com/sale/w/32622/triptochina.html?locale=en-US&curr=USD&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834705") },
+{ id:54,market:"US",destination:"China",category:"Experiences",type:"Experiences",title:"Classic Itineraries in China",description:"China — itinerarios clásicos.",url:U("https://us.trip.com/sale/w/14709/adspromy.html?locale=en-US&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834719") },
+{ id:55,market:"US",destination:"International",category:"Mixed",type:"Mixed",title:"Everyday Escape",description:"Ofertas de viajes para una escapada.",url:U("https://us.trip.com/sale/w/28065/everydayescape.html?locale=en-US&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834747") },
+{ id:56,market:"US",destination:"International",category:"Mixed",type:"Mixed",title:"Holiday Deals 2025",description:"Ofertas de vacaciones. Consulta la vigencia y condiciones.",url:U("https://us.trip.com/sale/w/27435/holidaydeals2025.html?locale=en-US&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834768"),verify:true },
+{ id:57,market:"US",destination:"Italy",category:"Hotels",type:"Hotels",title:"Italy Hotel Deals",description:"Italia — ofertas de hoteles.",url:U("https://us.trip.com/sale/w/6lumqrvjot5plrcj/italyhodeals.html?locale=en-US&transparentBar=1&wkp=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834789") },
+{ id:58,market:"US",destination:"China",category:"Experiences",type:"Experiences",title:"Go China",description:"China — descubre destinos y experiencias.",url:U("https://us.trip.com/sale/w/19280/gochina.html?locale=en-US&transparentBar=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834803") },
+
+{ id:59,market:"TW",destination:"Taiwan",category:"Mixed",type:"Mixed",title:"Family Campaign",description:"Campaña para viajes familiares.",url:U("https://tw.trip.com/sale/w/42134/family-campaign.html?locale=zh-TW&promo_referer=97_50093_14&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834838") },
+{ id:60,market:"TW",destination:"Japan",category:"Experiences",type:"Experiences",title:"Okinawa Promotion",description:"Japón — promoción de Okinawa.",url:U("https://tw.trip.com/sale/w/17859/okinawapromotion.html?locale=zh-TW&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834866") },
+{ id:61,market:"TW",destination:"Taiwan",category:"Food & Dining",type:"Other",title:"F&B Offers",description:"Restaurantes y ofertas de comida.",url:U("https://tw.trip.com/sale/w/3018/fnb.html?locale=zh-tw&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834880") },
+{ id:62,market:"TW",destination:"China",category:"Experiences",type:"Experiences",title:"Go China",description:"China — descubre destinos y experiencias.",url:U("https://tw.trip.com/sale/w/19280/gochina.html?locale=zh-TW&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834894") },
+{ id:63,market:"TW",destination:"South Korea",category:"Experiences",type:"Experiences",title:"South Korea Destination",description:"Corea del Sur — destinos y experiencias.",url:U("https://tw.trip.com/sale/w/4337/southkorea-destination.html?locale=zh-TW&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834936") },
+{ id:64,market:"TW",destination:"Japan",category:"Experiences",type:"Experiences",title:"Japan Travel",description:"Japón — ideas y experiencias de viaje.",url:U("https://tw.trip.com/sale/w/4217/japan-travel.html?locale=zh_tw&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834957") },
+{ id:65,market:"TW",destination:"Hong Kong & Macao",category:"Mixed",type:"Mixed",title:"CN-HK-MO Promotion",description:"Promoción para China, Hong Kong y Macao.",url:U("https://tw.trip.com/sale/w/5025/cn-hk-mo-promotion.html?locale=zh_tw&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834971") },
+
+{ id:66,market:"DE",destination:"Europe",category:"Experiences",type:"Experiences",title:"Discover in Europe",description:"Europa — descubre destinos y experiencias.",url:U("https://de.trip.com/sale/w/41134/discoverineurope.html?locale=de-DE&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19832703") },
+{ id:67,market:"DE",destination:"United Kingdom",category:"Trains",type:"Trains",title:"UK Trains",description:"Reino Unido — viajes en tren.",url:U("https://uk.trip.com/trains/uk?Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19832794") },
+{ id:68,market:"DE",destination:"Europe",category:"Experiences",type:"Experiences",title:"Discover in Europe",description:"Europa — descubre destinos y experiencias.",url:U("https://de.trip.com/sale/w/41134/discoverineurope.html?locale=de-DE&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834810") },
+
+{ id:69,market:"NZ",destination:"United Kingdom",category:"Trains",type:"Trains",title:"UK Trains",description:"Reino Unido — viajes en tren.",url:U("https://uk.trip.com/trains/uk?Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19832941") },
+{ id:70,market:"NZ",destination:"United Kingdom",category:"Trains",type:"Trains",title:"UK Trains",description:"Reino Unido — viajes en tren.",url:U("https://uk.trip.com/trains/uk?Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19834824") },
+{ id:71,market:"AU",destination:"United Kingdom",category:"Trains",type:"Trains",title:"UK Trains",description:"Reino Unido — viajes en tren.",url:U("https://uk.trip.com/trains/uk?Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19832850") },
+
+{ id:72,market:"RU",destination:"China",category:"Experiences",type:"Experiences",title:"Go China",description:"China — descubre destinos y experiencias.",url:U("https://ru.trip.com/sale/w/19280/gochina.html?locale=ru-RU&transparentBar=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19832899") },
+{ id:73,market:"RU",destination:"China",category:"Experiences",type:"Experiences",title:"China Travel",description:"China — atracciones y tours.",url:U("https://ru.trip.com/sale/w/38726/chinatravelhk.html?locale=ru-RU&transparentBar=1&wkp=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19832913") },
+{ id:74,market:"RU",destination:"United Kingdom",category:"Trains",type:"Trains",title:"UK Trains",description:"Reino Unido — viajes en tren.",url:U("https://uk.trip.com/trains/uk?Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19832927") },
+
+{ id:75,market:"XX",destination:"China",category:"Experiences",type:"Experiences",title:"China Travel",description:"China — atracciones y tours.",url:U("https://www.trip.com/sale/w/38726/chinatravelhk.html?locale=en-XX&transparentBar=1&wkp=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19832969") },
+{ id:76,market:"XX",destination:"United Kingdom",category:"Trains",type:"Trains",title:"UK Trains",description:"Reino Unido — viajes en tren.",url:U("https://uk.trip.com/trains/uk?Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19832983") },
+{ id:77,market:"XX",destination:"Switzerland",category:"Trains",type:"Trains",title:"Swiss Travel Pass",description:"Suiza — Swiss Travel Pass.",url:U("https://www.trip.com/sale/w/36318/swisstravelpass-zh-hk.html?locale=en-XX&transparentBar=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19832990") },
+
+{ id:78,market:"FR",destination:"Europe",category:"Experiences",type:"Experiences",title:"Discover in Europe",description:"Europa — descubre destinos y experiencias.",url:U("https://fr.trip.com/sale/w/41134/discoverineurope.html?locale=fr-FR&transparentBar=1&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19830470") },
+{ id:79,market:"FR",destination:"United Kingdom",category:"Trains",type:"Trains",title:"UK Trains",description:"Reino Unido — viajes en tren.",url:U("https://uk.trip.com/trains/uk?Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19830484") },
+
+{ id:80,market:"IT",destination:"United Kingdom",category:"Trains",type:"Trains",title:"UK Trains",description:"Reino Unido — viajes en tren.",url:U("https://uk.trip.com/trains/uk?Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19830491") },
+
+{ id:81,market:"US",destination:"International",category:"Mixed",type:"Mixed",title:"Everyday Escape",description:"Ofertas de viajes para una escapada.",url:U("https://us.trip.com/sale/w/28065/everydayescape.html?locale=en-US&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19828188") },
+{ id:82,market:"US",destination:"International",category:"Mixed",type:"Mixed",title:"Holiday Deals 2025",description:"Ofertas de vacaciones. Consulta la vigencia y condiciones.",url:U("https://us.trip.com/sale/w/27435/holidaydeals2025.html?locale=en-US&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19830302"),verify:true },
+{ id:83,market:"US",destination:"China",category:"Experiences",type:"Experiences",title:"Classic Itineraries in China",description:"China — itinerarios clásicos.",url:U("https://us.trip.com/sale/w/14709/adspromy.html?locale=en-US&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19830323") },
+{ id:84,market:"US",destination:"China",category:"Experiences",type:"Experiences",title:"Trip to China",description:"China — promoción de viajes a China.",url:U("https://us.trip.com/sale/w/32622/triptochina.html?locale=en-US&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19830330") },
+{ id:85,market:"US",destination:"United Kingdom",category:"Trains",type:"Trains",title:"UK Trains",description:"Reino Unido — viajes en tren.",url:U("https://uk.trip.com/trains/uk?Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19830358") },
+{ id:86,market:"US",destination:"United Kingdom",category:"Trains",type:"Trains",title:"UK Trains",description:"Reino Unido — viajes en tren.",url:U("https://uk.trip.com/trains/uk?Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19830407") },
+{ id:87,market:"MY",destination:"China",category:"Experiences",type:"Experiences",title:"Trip to China",description:"China — promoción de viajes a China.",url:U("https://my.trip.com/sale/w/32622/triptochina.html?locale=en-MY&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19830428") },
+{ id:88,market:"MY",destination:"International",category:"Mixed",type:"Mixed",title:"Holiday Deals 2025",description:"Ofertas de vacaciones. Consulta la vigencia y condiciones.",url:U("https://my.trip.com/sale/w/27435/holidaydeals2025.html?locale=en-MY&Allianceid=10520637&SID=330962290&trip_sub1=&trip_sub3=P19830435"),verify:true }
+];
+
+/* =========================
+   MERCADOS
+   ========================= */
+
+const markets = {
+  ID:"Indonesia",PH:"Philippines",HK:"Hong Kong",SG:"Singapore",
+  GB:"United Kingdom",US:"United States",TW:"Taiwan",DE:"Germany",
+  NZ:"New Zealand",AU:"Australia",RU:"Russia",XX:"International",
+  FR:"France",IT:"Italy",MY:"Malaysia"
+};
+
+/* =========================
+   TRADUCCIONES DE INTERFAZ
+   ========================= */
+
+const T = {
+es:{
+navOffers:"Ofertas",navTrust:"Confianza",navMarkets:"Mercados",languageLabel:"Idioma",
+heroEyebrow:"TRIP.COM · TRAVEL OFFERS",
+heroTitle:"Descubre ofertas de viajes por país y destino",
+heroText:"Elige una promoción, revisa el precio y las condiciones directamente en Trip.com.",
+exploreButton:"Explorar ofertas",heroNote:"Sin recargos añadidos por esta página.",
+heroCardTitle:"ofertas y promociones",heroCardText:"Selecciona país, destino, categoría o busca directamente la promoción que te interesa.",
+howTitle:"Cómo comprar",howText:"Un recorrido sencillo para llegar directamente a la oferta.",
+step1Title:"Elige destino",step1Text:"Busca el país, destino o promoción que te interesa.",
+step2Title:"Pulsa RESERVAR AQUÍ",step2Text:"Entra directamente en la oferta correspondiente de Trip.com.",
+step3Title:"Revisa y compra",step3Text:"Comprueba precio, disponibilidad y condiciones antes de comprar.",
+exploreTitle:"Explora ofertas por país y destino",
+exploreText:"Elige un país o destino y entra directamente en una promoción concreta de Trip.com. Allí podrás consultar el precio, la vigencia y las condiciones aplicables.",
+offersTitle:"Todas las ofertas",offersText:"Busca y filtra las promociones por mercado, destino, categoría y tipo de viaje.",
+searchLabel:"Buscar",searchPlaceholder:"China, Japón, Europa, vuelos...",
+marketLabel:"Mercado",destinationLabel:"Destino",categoryLabel:"Categoría",typeLabel:"Tipo",
+allMarkets:"Todos los mercados",allDestinations:"Todos los destinos",allCategories:"Todas las categorías",allTypes:"Todos los tipos",
+flights:"Vuelos",hotels:"Hoteles",trains:"Trenes",experiences:"Experiencias",mixed:"Mixto",other:"Otros",
+searchButton:"Buscar",reserveHere:"RESERVAR AQUÍ",viewOnPlatform:"Ver oferta y precio en Trip.com",
+verifyAvailability:"Consulta la vigencia y condiciones en Trip.com.",clearFilters:"Limpiar filtros",
+emptyState:"No encontramos ofertas con esos filtros.",
+marketsTitle:"Ofertas por mercado",marketsText:"Explora las promociones según el mercado desde el que se presenta cada oferta.",
+trustTitle:"Información clara antes de comprar",trustText:"Esta página facilita el acceso a promociones. Los datos finales de la reserva se consultan en Trip.com.",
+trust1Title:"Precio y condiciones",trust1Text:"Consulta el precio, disponibilidad, vigencia y condiciones directamente en Trip.com.",
+trust2Title:"Enlace directo",trust2Text:"Cada botón abre la promoción correspondiente en una nueva pestaña.",
+trust3Title:"Sin recargo añadido",trust3Text:"Esta página no añade un recargo al precio que se muestra en la plataforma.",
+affiliateDisclosure:"Esta página utiliza enlaces afiliados de Trip.com. Podemos recibir una comisión por determinadas reservas realizadas mediante nuestros enlaces, sin coste adicional para el usuario.",
+ctaTitle:"¿Ya sabes dónde quieres viajar?",ctaText:"Explora las ofertas y entra directamente en la promoción que te interese.",ctaButton:"Ver ofertas",
+brandDisclaimer:"Trip.com es una marca de Trip.com Group. Esta página no es el sitio oficial de Trip.com.",
+officialToolsNote:"Las promociones y enlaces proceden de herramientas/enlaces de afiliado de Trip.com proporcionados para este propósito. La vigencia de determinadas campañas debe comprobarse en la plataforma.",
+footerTravel:"Travel offers and promotional links",privacy:"Privacidad",terms:"Términos",affiliateShort:"Información de afiliación",close:"Cerrar",
+marketNames:{ID:"Indonesia",PH:"Filipinas",HK:"Hong Kong",SG:"Singapur",GB:"Reino Unido",US:"Estados Unidos",TW:"Taiwán",DE:"Alemania",NZ:"Nueva Zelanda",AU:"Australia",RU:"Rusia",XX:"Internacional",FR:"Francia",IT:"Italia",MY:"Malasia"}
+},
+en:{
+navOffers:"Offers",navTrust:"Trust",navMarkets:"Markets",languageLabel:"Language",
+heroEyebrow:"TRIP.COM · TRAVEL OFFERS",heroTitle:"Discover travel offers by country and destination",
+heroText:"Choose a promotion and check the price and conditions directly on Trip.com.",
+exploreButton:"Explore offers",heroNote:"No additional surcharge from this page.",
+heroCardTitle:"offers and promotions",heroCardText:"Select a country, destination, category or search directly for the promotion you want.",
+howTitle:"How to buy",howText:"A simple journey to reach the offer directly.",
+step1Title:"Choose a destination",step1Text:"Find the country, destination or promotion you want.",
+step2Title:"Click RESERVE HERE",step2Text:"Go directly to the corresponding Trip.com offer.",
+step3Title:"Review and buy",step3Text:"Check price, availability and conditions before purchasing.",
+exploreTitle:"Explore offers by country and destination",exploreText:"Choose a country or destination and enter a specific Trip.com promotion. Check price, validity and applicable conditions there.",
+offersTitle:"All offers",offersText:"Search and filter promotions by market, destination, category and travel type.",
+searchLabel:"Search",searchPlaceholder:"China, Japan, Europe, flights...",marketLabel:"Market",destinationLabel:"Destination",categoryLabel:"Category",typeLabel:"Type",
+allMarkets:"All markets",allDestinations:"All destinations",allCategories:"All categories",allTypes:"All types",
+flights:"Flights",hotels:"Hotels",trains:"Trains",experiences:"Experiences",mixed:"Mixed",other:"Other",
+searchButton:"Search",reserveHere:"RESERVE HERE",viewOnPlatform:"View offer and price on Trip.com",
+verifyAvailability:"Check validity and conditions on Trip.com.",clearFilters:"Clear filters",
+emptyState:"No offers match these filters.",marketsTitle:"Offers by market",marketsText:"Explore promotions by the market where each offer is presented.",
+trustTitle:"Clear information before buying",trustText:"This page provides access to promotions. Final booking details are checked on Trip.com.",
+trust1Title:"Price and conditions",trust1Text:"Check price, availability, validity and conditions directly on Trip.com.",
+trust2Title:"Direct link",trust2Text:"Each button opens the corresponding promotion in a new tab.",
+trust3Title:"No added surcharge",trust3Text:"This page does not add a surcharge to the price shown on the platform.",
+affiliateDisclosure:"This page uses Trip.com affiliate links. We may receive a commission from certain bookings made through our links, at no additional cost to the user.",
+ctaTitle:"Already know where you want to go?",ctaText:"Explore the offers and enter the promotion that interests you.",ctaButton:"View offers",
+brandDisclaimer:"Trip.com is a brand of Trip.com Group. This page is not the official Trip.com website.",
+officialToolsNote:"Promotions and links come from Trip.com affiliate tools/links provided for this purpose. The validity of certain campaigns should be checked on the platform.",
+footerTravel:"Travel offers and promotional links",privacy:"Privacy",terms:"Terms",affiliateShort:"Affiliate information",close:"Close",
+marketNames:{ID:"Indonesia",PH:"Philippines",HK:"Hong Kong",SG:"Singapore",GB:"United Kingdom",US:"United States",TW:"Taiwan",DE:"Germany",NZ:"New Zealand",AU:"Australia",RU:"Russia",XX:"International",FR:"France",IT:"Italy",MY:"Malaysia"}
+}
+};
+
+/* Completa los otros 12 idiomas con traducción real de los controles principales. */
+T.fr={...T.en,navOffers:"Offres",navTrust:"Confiance",navMarkets:"Marchés",languageLabel:"Langue",heroTitle:"Découvrez des offres de voyage par pays et destination",heroText:"Choisissez une promotion et consultez directement le prix et les conditions sur Trip.com.",exploreButton:"Explorer les offres",howTitle:"Comment acheter",exploreTitle:"Explorez les offres par pays et destination",offersTitle:"Toutes les offres",searchLabel:"Rechercher",searchPlaceholder:"Chine, Japon, Europe, vols...",marketLabel:"Marché",destinationLabel:"Destination",categoryLabel:"Catégorie",typeLabel:"Type",allMarkets:"Tous les marchés",allDestinations:"Toutes les destinations",allCategories:"Toutes les catégories",allTypes:"Tous les types",flights:"Vols",hotels:"Hôtels",trains:"Trains",experiences:"Expériences",mixed:"Mixte",other:"Autres",reserveHere:"RÉSERVER ICI",viewOnPlatform:"Voir l'offre et le prix sur Trip.com",clearFilters:"Effacer les filtres",emptyState:"Aucune offre ne correspond.",marketsTitle:"Offres par marché",trustTitle:"Informations claires avant l'achat",ctaButton:"Voir les offres",privacy:"Confidentialité",terms:"Conditions"};
+T.de={...T.en,navOffers:"Angebote",navTrust:"Vertrauen",navMarkets:"Märkte",languageLabel:"Sprache",heroTitle:"Reiseangebote nach Land und Reiseziel entdecken",heroText:"Wählen Sie ein Angebot und prüfen Sie Preis und Bedingungen direkt bei Trip.com.",exploreButton:"Angebote entdecken",howTitle:"So kaufen Sie",exploreTitle:"Angebote nach Land und Reiseziel entdecken",offersTitle:"Alle Angebote",searchLabel:"Suchen",searchPlaceholder:"China, Japan, Europa, Flüge...",marketLabel:"Markt",destinationLabel:"Reiseziel",categoryLabel:"Kategorie",typeLabel:"Typ",allMarkets:"Alle Märkte",allDestinations:"Alle Reiseziele",allCategories:"Alle Kategorien",allTypes:"Alle Typen",flights:"Flüge",hotels:"Hotels",trains:"Züge",experiences:"Erlebnisse",mixed:"Gemischt",other:"Andere",reserveHere:"HIER RESERVIEREN",viewOnPlatform:"Angebot und Preis auf Trip.com ansehen",clearFilters:"Filter löschen",emptyState:"Keine passenden Angebote.",marketsTitle:"Angebote nach Markt",trustTitle:"Klare Informationen vor dem Kauf",ctaButton:"Angebote ansehen",privacy:"Datenschutz",terms:"Bedingungen"};
+T.it={...T.en,navOffers:"Offerte",navTrust:"Affidabilità",navMarkets:"Mercati",languageLabel:"Lingua",heroTitle:"Scopri offerte di viaggio per paese e destinazione",heroText:"Scegli una promozione e controlla prezzo e condizioni direttamente su Trip.com.",exploreButton:"Esplora le offerte",howTitle:"Come acquistare",exploreTitle:"Esplora le offerte per paese e destinazione",offersTitle:"Tutte le offerte",searchLabel:"Cerca",searchPlaceholder:"Cina, Giappone, Europa, voli...",marketLabel:"Mercato",destinationLabel:"Destinazione",categoryLabel:"Categoria",typeLabel:"Tipo",allMarkets:"Tutti i mercati",allDestinations:"Tutte le destinazioni",allCategories:"Tutte le categorie",allTypes:"Tutti i tipi",flights:"Voli",hotels:"Hotel",trains:"Treni",experiences:"Esperienze",mixed:"Misto",other:"Altro",reserveHere:"PRENOTA QUI",viewOnPlatform:"Vedi offerta e prezzo su Trip.com",clearFilters:"Cancella filtri",emptyState:"Nessuna offerta trovata.",marketsTitle:"Offerte per mercato",trustTitle:"Informazioni chiare prima dell'acquisto",ctaButton:"Vedi offerte",privacy:"Privacy",terms:"Termini"};
+T.pt={...T.en,navOffers:"Ofertas",navTrust:"Confiança",navMarkets:"Mercados",languageLabel:"Idioma",heroTitle:"Descubra ofertas de viagens por país e destino",heroText:"Escolha uma promoção e consulte o preço e as condições diretamente na Trip.com.",exploreButton:"Explorar ofertas",howTitle:"Como comprar",exploreTitle:"Explore ofertas por país e destino",offersTitle:"Todas as ofertas",searchLabel:"Pesquisar",searchPlaceholder:"China, Japão, Europa, voos...",marketLabel:"Mercado",destinationLabel:"Destino",categoryLabel:"Categoria",typeLabel:"Tipo",allMarkets:"Todos os mercados",allDestinations:"Todos os destinos",allCategories:"Todas as categorias",allTypes:"Todos os tipos",flights:"Voos",hotels:"Hotéis",trains:"Trens",experiences:"Experiências",mixed:"Misto",other:"Outros",reserveHere:"RESERVAR AQUI",viewOnPlatform:"Ver oferta e preço na Trip.com",clearFilters:"Limpar filtros",emptyState:"Nenhuma oferta encontrada.",marketsTitle:"Ofertas por mercado",trustTitle:"Informações claras antes da compra",ctaButton:"Ver ofertas",privacy:"Privacidade",terms:"Termos"};
+T.zh={...T.en,navOffers:"优惠",navTrust:"信任",navMarkets:"市场",languageLabel:"语言",heroTitle:"按国家和目的地探索旅行优惠",heroText:"选择优惠，并直接在 Trip.com 查看价格和条件。",exploreButton:"探索优惠",howTitle:"如何购买",exploreTitle:"按国家和目的地探索优惠",offersTitle:"全部优惠",searchLabel:"搜索",searchPlaceholder:"中国、日本、欧洲、航班...",marketLabel:"市场",destinationLabel:"目的地",categoryLabel:"类别",typeLabel:"类型",allMarkets:"所有市场",allDestinations:"所有目的地",allCategories:"所有类别",allTypes:"所有类型",flights:"航班",hotels:"酒店",trains:"火车",experiences:"体验",mixed:"综合",other:"其他",reserveHere:"立即预订",viewOnPlatform:"在 Trip.com 查看优惠和价格",clearFilters:"清除筛选",emptyState:"没有符合条件的优惠。",marketsTitle:"按市场查看优惠",trustTitle:"购买前了解清楚信息",ctaButton:"查看优惠",privacy:"隐私",terms:"条款"};
+T.zhTW={...T.zh,heroTitle:"依國家與目的地探索旅遊優惠",heroText:"選擇優惠，直接在 Trip.com 查看價格與條件。",exploreButton:"探索優惠",exploreTitle:"依國家與目的地探索優惠",offersTitle:"全部優惠",searchLabel:"搜尋",marketLabel:"市場",destinationLabel:"目的地",categoryLabel:"類別",reserveHere:"立即預訂",viewOnPlatform:"在 Trip.com 查看優惠與價格",clearFilters:"清除篩選",marketsTitle:"依市場查看優惠",privacy:"隱私權",terms:"條款"};
+T.ja={...T.en,navOffers:"オファー",navTrust:"安心情報",navMarkets:"マーケット",languageLabel:"言語",heroTitle:"国・目的地別に旅行のお得な情報を探す",heroText:"プロモーションを選び、Trip.comで価格と条件を直接確認できます。",exploreButton:"オファーを見る",howTitle:"購入方法",exploreTitle:"国・目的地別にオファーを探す",offersTitle:"すべてのオファー",searchLabel:"検索",searchPlaceholder:"中国、日本、ヨーロッパ、航空券...",marketLabel:"マーケット",destinationLabel:"目的地",categoryLabel:"カテゴリー",allMarkets:"すべてのマーケット",allDestinations:"すべての目的地",allCategories:"すべてのカテゴリー",allTypes:"すべてのタイプ",flights:"航空券",hotels:"ホテル",trains:"鉄道",experiences:"体験",mixed:"複合",other:"その他",reserveHere:"ここから予約",viewOnPlatform:"Trip.comでオファーと価格を見る",clearFilters:"フィルターを解除",emptyState:"該当するオファーがありません。",marketsTitle:"マーケット別オファー",trustTitle:"購入前に確認できる情報",ctaButton:"オファーを見る",privacy:"プライバシー",terms:"利用規約"};
+T.ko={...T.en,navOffers:"특가",navTrust:"안내",navMarkets:"시장",languageLabel:"언어",heroTitle:"국가와 목적지별 여행 특가를 찾아보세요",heroText:"프로모션을 선택하고 Trip.com에서 가격과 조건을 직접 확인하세요.",exploreButton:"특가 보기",howTitle:"구매 방법",exploreTitle:"국가와 목적지별 특가 탐색",offersTitle:"모든 특가",searchLabel:"검색",searchPlaceholder:"중국, 일본, 유럽, 항공편...",marketLabel:"시장",destinationLabel:"목적지",categoryLabel:"카테고리",allMarkets:"모든 시장",allDestinations:"모든 목적지",allCategories:"모든 카테고리",allTypes:"모든 유형",flights:"항공편",hotels:"호텔",trains:"기차",experiences:"체험",mixed:"혼합",other:"기타",reserveHere:"여기서 예약",viewOnPlatform:"Trip.com에서 특가 및 가격 보기",clearFilters:"필터 지우기",emptyState:"조건에 맞는 특가가 없습니다.",marketsTitle:"시장별 특가",trustTitle:"구매 전 확인 정보",ctaButton:"특가 보기",privacy:"개인정보 보호",terms:"약관"};
+T.vi={...T.en,navOffers:"Ưu đãi",navTrust:"Thông tin",navMarkets:"Thị trường",languageLabel:"Ngôn ngữ",heroTitle:"Khám phá ưu đãi du lịch theo quốc gia và điểm đến",heroText:"Chọn chương trình và xem giá cùng điều kiện trực tiếp trên Trip.com.",exploreButton:"Khám phá ưu đãi",howTitle:"Cách mua",exploreTitle:"Khám phá ưu đãi theo quốc gia và điểm đến",offersTitle:"Tất cả ưu đãi",searchLabel:"Tìm kiếm",searchPlaceholder:"Trung Quốc, Nhật Bản, châu Âu, chuyến bay...",marketLabel:"Thị trường",destinationLabel:"Điểm đến",categoryLabel:"Danh mục",allMarkets:"Tất cả thị trường",allDestinations:"Tất cả điểm đến",allCategories:"Tất cả danh mục",allTypes:"Tất cả loại",flights:"Chuyến bay",hotels:"Khách sạn",trains:"Tàu",experiences:"Trải nghiệm",mixed:"Kết hợp",other:"Khác",reserveHere:"ĐẶT NGAY",viewOnPlatform:"Xem ưu đãi và giá trên Trip.com",clearFilters:"Xóa bộ lọc",emptyState:"Không có ưu đãi phù hợp.",marketsTitle:"Ưu đãi theo thị trường",trustTitle:"Thông tin rõ ràng trước khi mua",ctaButton:"Xem ưu đãi",privacy:"Quyền riêng tư",terms:"Điều khoản"};
+T.id={...T.en,navOffers:"Penawaran",navTrust:"Informasi",navMarkets:"Pasar",languageLabel:"Bahasa",heroTitle:"Temukan penawaran perjalanan berdasarkan negara dan destinasi",heroText:"Pilih promosi dan lihat harga serta ketentuan langsung di Trip.com.",exploreButton:"Jelajahi penawaran",howTitle:"Cara membeli",exploreTitle:"Jelajahi penawaran berdasarkan negara dan destinasi",offersTitle:"Semua penawaran",searchLabel:"Cari",searchPlaceholder:"China, Jepang, Eropa, penerbangan...",marketLabel:"Pasar",destinationLabel:"Destinasi",categoryLabel:"Kategori",allMarkets:"Semua pasar",allDestinations:"Semua destinasi",allCategories:"Semua kategori",allTypes:"Semua tipe",flights:"Penerbangan",hotels:"Hotel",trains:"Kereta",experiences:"Pengalaman",mixed:"Campuran",other:"Lainnya",reserveHere:"PESAN DI SINI",viewOnPlatform:"Lihat penawaran dan harga di Trip.com",clearFilters:"Hapus filter",emptyState:"Tidak ada penawaran yang sesuai.",marketsTitle:"Penawaran berdasarkan pasar",trustTitle:"Informasi jelas sebelum membeli",ctaButton:"Lihat penawaran",privacy:"Privasi",terms:"Ketentuan"};
+T.th={...T.en,navOffers:"ข้อเสนอ",navTrust:"ข้อมูล",navMarkets:"ตลาด",languageLabel:"ภาษา",heroTitle:"ค้นหาข้อเสนอการเดินทางตามประเทศและจุดหมาย",heroText:"เลือกโปรโมชั่นและตรวจสอบราคาและเงื่อนไขโดยตรงบน Trip.com",exploreButton:"สำรวจข้อเสนอ",howTitle:"วิธีซื้อ",exploreTitle:"สำรวจข้อเสนอตามประเทศและจุดหมาย",offersTitle:"ข้อเสนอทั้งหมด",searchLabel:"ค้นหา",searchPlaceholder:"จีน ญี่ปุ่น ยุโรป เที่ยวบิน...",marketLabel:"ตลาด",destinationLabel:"จุดหมาย",categoryLabel:"หมวดหมู่",allMarkets:"ตลาดทั้งหมด",allDestinations:"จุดหมายทั้งหมด",allCategories:"ทุกหมวดหมู่",allTypes:"ทุกประเภท",flights:"เที่ยวบิน",hotels:"โรงแรม",trains:"รถไฟ",experiences:"ประสบการณ์",mixed:"ผสม",other:"อื่นๆ",reserveHere:"จองที่นี่",viewOnPlatform:"ดูข้อเสนอและราคาบน Trip.com",clearFilters:"ล้างตัวกรอง",emptyState:"ไม่พบข้อเสนอที่ตรงกัน",marketsTitle:"ข้อเสนอตามตลาด",trustTitle:"ข้อมูลชัดเจนก่อนซื้อ",ctaButton:"ดูข้อเสนอ",privacy:"ความเป็นส่วนตัว",terms:"ข้อกำหนด"};
+T.ru={...T.en,navOffers:"Предложения",navTrust:"Информация",navMarkets:"Рынки",languageLabel:"Язык",heroTitle:"Путешествия: предложения по странам и направлениям",heroText:"Выберите предложение и проверьте цену и условия непосредственно на Trip.com.",exploreButton:"Смотреть предложения",howTitle:"Как купить",exploreTitle:"Предложения по странам и направлениям",offersTitle:"Все предложения",searchLabel:"Поиск",searchPlaceholder:"Китай, Япония, Европа, авиабилеты...",marketLabel:"Рынок",destinationLabel:"Направление",categoryLabel:"Категория",allMarkets:"Все рынки",allDestinations:"Все направления",allCategories:"Все категории",allTypes:"Все типы",flights:"Авиабилеты",hotels:"Отели",trains:"Поезда",experiences:"Впечатления",mixed:"Смешанные",other:"Другое",reserveHere:"ЗАБРОНИРОВАТЬ",viewOnPlatform:"Посмотреть предложение и цену на Trip.com",clearFilters:"Сбросить фильтры",emptyState:"Подходящих предложений не найдено.",marketsTitle:"Предложения по рынкам",trustTitle:"Понятная информация перед покупкой",ctaButton:"Смотреть предложения",privacy:"Конфиденциальность",terms:"Условия"};
+
+/* =========================
+   EJEMPLOS DESTACADOS
+   ========================= */
+
+const quickExamples = [
+ {label:"CHINA",destination:"China",title:"Trip to China",id:11},
+ {label:"CHINA",destination:"China",title:"Classic Itineraries in China",id:9},
+ {label:"EUROPE",destination:"Europe",title:"Discover in Europe",id:29},
+ {label:"EUROPE",destination:"Europe",title:"Eurail / Interrail Pass",id:13},
+ {label:"SWITZERLAND",destination:"Switzerland",title:"Swiss Travel Pass",id:31},
+ {label:"UNITED KINGDOM",destination:"United Kingdom",title:"UK Trains",id:16},
+ {label:"JAPAN",destination:"Japan",title:"Okinawa Promotion",id:60},
+ {label:"JAPAN",destination:"Japan",title:"Japan Travel",id:64},
+ {label:"SOUTH KOREA",destination:"South Korea",title:"South Korea Destination",id:63},
+ {label:"VIETNAM",destination:"Vietnam",title:"Hello Vietnam",id:23},
+ {label:"PARIS",destination:"Paris",title:"Disneyland Paris",id:25},
+ {label:"ITALY",destination:"Italy",title:"Italy Hotel Deals",id:57},
+ {label:"HONG KONG & MACAO",destination:"Hong Kong & Macao",title:"CN-HK-MO Promotion",id:65},
+ {label:"INDONESIA",destination:"Indonesia",title:"AirAsia",id:3},
+ {label:"PHILIPPINES",destination:"Philippines",title:"Go Beyond",id:14},
+ {label:"SINGAPORE",destination:"Singapore",title:"Go China",id:37},
+ {label:"UNITED STATES",destination:"International",title:"Everyday Escape",id:55},
+ {label:"MALAYSIA",destination:"China",title:"Trip to China",id:87}
+];
+
+let lang="es";
+
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => [...document.querySelectorAll(s)];
+
+function t(key){
+  return (T[lang] && T[lang][key]) || T.en[key] || key;
+}
+
+function setText(el,key){
+  const value=t(key);
+  if(value) el.textContent=value;
+}
+
+function applyTranslations(){
+  document.documentElement.lang=lang==="zhTW"?"zh-TW":lang;
+  $$("[data-i18n]").forEach(el=>setText(el,el.dataset.i18n));
+  $$("[data-i18n-placeholder]").forEach(el=>el.placeholder=t(el.dataset.i18nPlaceholder));
+  $("#closeModal").setAttribute("aria-label",t("close"));
+  renderFilters();
+  renderQuick();
+  renderMarkets();
+  renderOffers();
+}
+
+/* =========================
+   FILTROS
+   ========================= */
+
+function unique(field){
+  return [...new Set(offers.map(o=>o[field]))].sort((a,b)=>a.localeCompare(b));
+}
+
+function labelType(value){
+  const map={Flights:"flights",Hotels:"hotels",Trains:"trains",Experiences:"experiences",Mixed:"mixed",Other:"other"};
+  return t(map[value]||value);
+}
+
+function labelCategory(value){
+  const map={
+    Flights:"flights",Hotels:"hotels",Trains:"trains",
+    Experiences:"experiences",Mixed:"mixed",
+    "Special offers":"other","Food & Dining":"other"
+  };
+  return t(map[value]||value);
+}
+
+function renderFilters(){
+  const market=$("#market"), destination=$("#destination"), category=$("#category"), type=$("#type");
+  const oldM=market.value,oldD=destination.value,oldC=category.value,oldT=type.value;
+
+  market.textContent="";
+  destination.textContent="";
+  category.textContent="";
+  type.textContent="";
+
+  addOption(market,"",t("allMarkets"));
+  Object.keys(markets).sort().forEach(k=>addOption(market,k,T[lang]?.marketNames?.[k]||T.en.marketNames[k]));
+
+  addOption(destination,"",t("allDestinations"));
+  unique("destination").forEach(v=>addOption(destination,v,v));
+
+  addOption(category,"",t("allCategories"));
+  unique("category").forEach(v=>addOption(category,v,labelCategory(v)));
+
+  addOption(type,"",t("allTypes"));
+  unique("type").forEach(v=>addOption(type,v,labelType(v)));
+
+  market.value=oldM;
+  destination.value=oldD;
+  category.value=oldC;
+  type.value=oldT;
+
+  const strip=$("#categoryStrip");
+  strip.textContent="";
+  ["Flights","Hotels","Trains","Experiences","Mixed"].forEach(c=>{
+    const b=document.createElement("button");
+    b.type="button";
+    b.className="category-chip";
+    b.textContent=labelCategory(c);
+    b.addEventListener("click",()=>{
+      category.value=c;
+      renderOffers();
+    });
+    strip.appendChild(b);
+  });
+}
+
+function addOption(select,value,text){
+  const option=document.createElement("option");
+  option.value=value;
+  option.textContent=text;
+  select.appendChild(option);
+}
+
+/* =========================
+   OFERTAS DESTACADAS
+   ========================= */
+
+function renderQuick(){
+  const grid=$("#quickGrid");
+  grid.textContent="";
+
+  quickExamples.forEach(q=>{
+    const offer=offers.find(o=>o.id===q.id);
+    if(!offer)return;
+
+    const article=document.createElement("article");
+    article.className="quick";
+
+    const market=document.createElement("div");
+    market.className="quick-market";
+    market.textContent=q.label;
+
+    const h=document.createElement("h3");
+    h.textContent=q.title;
+
+    const p=document.createElement("p");
+    p.textContent=offer.description;
+
+    const a=document.createElement("a");
+    a.className="btn btn-green";
+    a.href=offer.url;
+    a.target="_blank";
+    a.rel="sponsored noopener";
+    a.textContent=t("reserveHere");
+    a.setAttribute("aria-label",`${t("reserveHere")}: ${offer.title}`);
+
+    article.append(market,h,p,a);
+    grid.appendChild(article);
+  });
+}
+
+/* =========================
+   TARJETAS DE OFERTAS
+   ========================= */
+
+function getFilteredOffers(){
+  const q=$("#search").value.trim().toLowerCase();
+  const m=$("#market").value;
+  const d=$("#destination").value;
+  const c=$("#category").value;
+  const type=$("#type").value;
+
+  return offers.filter(o=>{
+    const hay=[o.title,o.description,o.destination,o.category,o.market,markets[o.market]].join(" ").toLowerCase();
+    return (!q||hay.includes(q))
+      &&(!m||o.market===m)
+      &&(!d||o.destination===d)
+      &&(!c||o.category===c)
+      &&(!type||o.type===type);
+  });
+}
+
+function renderOffers(){
+  const grid=$("#offersGrid");
+  grid.textContent="";
+  const list=getFilteredOffers();
+
+  $("#resultCount").textContent=`${list.length} / ${offers.length}`;
+
+  if(!list.length){
+    const empty=document.createElement("div");
+    empty.className="empty";
+    empty.textContent=t("emptyState");
+    grid.appendChild(empty);
+    return;
+  }
+
+  list.forEach(o=>{
+    const article=document.createElement("article");
+    article.className="offer";
+
+    const visual=document.createElement("div");
+    visual.className="offer-visual";
+
+    const visualTitle=document.createElement("strong");
+    visualTitle.textContent=o.destination;
+    visual.appendChild(visualTitle);
+
+    const body=document.createElement("div");
+    body.className="offer-body";
+
+    const meta=document.createElement("div");
+    meta.className="offer-meta";
+
+    const marketTag=document.createElement("span");
+    marketTag.className="tag blue";
+    marketTag.textContent=`${o.market} · ${T[lang]?.marketNames?.[o.market]||T.en.marketNames[o.market]}`;
+
+    const destTag=document.createElement("span");
+    destTag.className="tag";
+    destTag.textContent=o.destination;
+
+    const typeTag=document.createElement("span");
+    typeTag.className="tag green";
+    typeTag.textContent=labelType(o.type);
+
+    meta.append(marketTag,destTag,typeTag);
+
+    const h=document.createElement("h3");
+    h.textContent=o.title;
+
+    const p=document.createElement("p");
+    p.textContent=o.description;
+
+    const actions=document.createElement("div");
+    actions.className="offer-actions";
+
+    const a=document.createElement("a");
+    a.className="btn btn-green";
+    a.href=o.url;
+    a.target="_blank";
+    a.rel="sponsored noopener";
+    a.textContent=t("reserveHere");
+    a.setAttribute("aria-label",`${t("reserveHere")}: ${o.title} — ${o.destination}`);
+
+    const note=document.createElement("div");
+    note.className="platform-note";
+    note.textContent=t("viewOnPlatform");
+
+    actions.append(a,note);
+
+    body.append(meta,h,p,actions);
+
+    if(o.verify){
+      const verify=document.createElement("div");
+      verify.className="verify";
+      verify.textContent=t("verifyAvailability");
+      body.appendChild(verify);
+    }
+
+    article.append(visual,body);
+    grid.appendChild(article);
+  });
+}
+
+/* =========================
+   MERCADOS
+   ========================= */
+
+function renderMarkets(){
+  const grid=$("#marketGrid");
+  grid.textContent="";
+
+  Object.keys(markets).sort().forEach(code=>{
+    const count=offers.filter(o=>o.market===code).length;
+
+    const article=document.createElement("article");
+    article.className="market-card";
+    article.tabIndex=0;
+    article.setAttribute("role","button");
+
+    const codeEl=document.createElement("div");
+    codeEl.className="market-code";
+    codeEl.textContent=code;
+
+    const name=document.createElement("div");
+    name.className="market-name";
+    name.textContent=T[lang]?.marketNames?.[code]||T.en.marketNames[code];
+
+    const countEl=document.createElement("div");
+    countEl.className="market-count";
+    countEl.textContent=`${count} ${t("offersTitle").toLowerCase()}`;
+
+    article.append(codeEl,name,countEl);
+
+    const activate=()=>{
+      $("#market").value=code;
+      renderOffers();
+      $("#offers").scrollIntoView({behavior:"smooth"});
+    };
+    article.addEventListener("click",activate);
+    article.addEventListener("keydown",e=>{
+      if(e.key==="Enter"||e.key===" "){e.preventDefault();activate()}
+    });
+
+    grid.appendChild(article);
+  });
+}
+
+/* =========================
+   MODALES LEGALES
+   ========================= */
+
+function openModal(type){
+  const modal=$("#modal");
+  const title=$("#modalTitle");
+  const content=$("#modalContent");
+  content.textContent="";
+
+  const h=t(type);
+  title.textContent=h;
+
+  const p=document.createElement("p");
+
+  if(type==="privacy"){
+    p.textContent=lang==="es"
+      ?"Esta página está diseñada para funcionar sin formularios de registro, sin cuentas de usuario, sin almacenamiento de datos personales y sin analítica de terceros. La búsqueda y los filtros funcionan localmente en el navegador."
+      :"This page is designed to work without registration forms, user accounts, personal-data storage or third-party analytics. Search and filters operate locally in the browser.";
+  }else if(type==="terms"){
+    p.textContent=lang==="es"
+      ?"Las promociones, precios, disponibilidad, vigencia y condiciones son determinados por Trip.com y pueden cambiar. Antes de comprar, revisa siempre la información mostrada en la plataforma."
+      :"Promotions, prices, availability, validity and conditions are determined by Trip.com and may change. Always review the information shown on the platform before purchasing.";
+  }else{
+    p.textContent=t("affiliateDisclosure");
+  }
+
+  content.appendChild(p);
+  modal.classList.add("open");
+  $("#closeModal").focus();
+}
+
+function closeModal(){
+  $("#modal").classList.remove("open");
+}
+
+/* =========================
+   EVENTOS
+   ========================= */
+
+$("#language").addEventListener("change",e=>{
+  lang=e.target.value;
+  applyTranslations();
+});
+
+["search","market","destination","category","type"].forEach(id=>{
+  $("#"+id).addEventListener(id==="search"?"input":"change",renderOffers);
+});
+
+$("#clearFilters").addEventListener("click",()=>{
+  $("#search").value="";
+  $("#market").value="";
+  $("#destination").value="";
+  $("#category").value="";
+  $("#type").value="";
+  renderOffers();
+});
+
+$$("[data-modal]").forEach(btn=>{
+  btn.addEventListener("click",()=>openModal(btn.dataset.modal));
+});
+
+$("#closeModal").addEventListener("click",closeModal);
+
+$("#modal").addEventListener("click",e=>{
+  if(e.target===$("#modal"))closeModal();
+});
+
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape")closeModal();
+});
+
+/* =========================
+   INICIO
+   ========================= */
+
+applyTranslations();
+
+/* Verificación interna del conjunto de ofertas. */
+console.info("Trip.com Travel Offers:",offers.length,"ofertas cargadas.");
+</script>
+
+</body>
+</html>
